@@ -1,1 +1,208 @@
-Hello World
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Jesture</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            padding: 0;
+        }
+
+        header {
+            margin: 0;
+            background-color: #f0f0f0;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            width: 100vw;
+            padding: 1em;
+        }
+
+        .brand {
+            display: flex;
+            flex-direction: row;
+            height: 6em;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .icon {
+            width: 6em;
+            height: 6em;
+            border-radius: 3em;
+        }
+
+        .title {
+            margin: 0;
+            margin-left: 2rem;
+            font-size: 4em;
+        }
+
+        .screenshot {
+            max-width: 30rem;
+            margin-left: 2rem;
+            margin-right: 2rem;
+        }
+
+        section {
+            max-width: 75rem;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .horizontal,
+        .reverse {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .reverse {
+            flex-direction: row-reverse;
+        }
+
+        .pfp {
+            width: 10rem;
+            height: 10rem;
+            border-radius: 5rem;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="hero-text">
+            <div class="brand">
+                <img alt="Jesture logo" src="https://source.unsplash.com/random"
+                    class="icon" />
+                <h1 class="title">Jesture</h1>
+            </div>
+            <h3>Control your computer with your hands, not your keyboard.</h3>
+            <a href="#download">Download for Linux</a>
+        </div>
+        <img alt="Desktop window for Jesture App"
+            src="https://source.unsplash.com/random" class="screenshot" />
+    </header>
+    <section id="about">
+        <div class="horizontal">
+            <p>
+                Jesture uses computer vision to read your hands, and will
+                perform
+                keyboard or mouse events for you when it sees a gesture.
+            </p>
+            <img alt="App diagram" src="https://source.unsplash.com/random"
+                class="screenshot" />
+        </div>
+        <div class="reverse">
+            <p>
+                Think pressing escape when you curl your hand into a fist, or
+                moving
+                the mouse to follow your hand when you point upwards.
+            </p>
+            <img alt="Gesture demo" src="https://source.unsplash.com/random"
+                class="screenshot" />
+        </div>
+    </section>
+    <section id="download">
+        <h2>Downloads</h2>
+        <p>
+            You can download our app as a prebuilt Debian package.
+        </p>
+        <a
+            href="https://github.com/JestureApp/Jesture/releases/download/v0.5.0/jesture-0_5_0-x86_64.deb">
+            Download for Linux
+        </a>
+        <p>
+            The code is also on github.
+        </p>
+        <a href="https://github.com/JestureApp">We're open source!</a>
+    </section>
+    <section id="usage">
+        <h2>Using the app</h2>
+        <div class="horizontal">
+            <p>
+                Pretty simple. Open the app up, go to the gesture list on the
+                side.
+            </p>
+            <img alt="Gesture list tutorial"
+                src="https://source.unsplash.com/random" class="screenshot" />
+        </div>
+        <div class="reverse">
+            <p>
+                Change the gestures here to your desired keybindings. Or, record
+                a
+                new gesture.
+            </p>
+            <img alt="Edit gestures tutorial"
+                src="https://source.unsplash.com/random" class="screenshot" />
+        </div>
+        <div class="horizontal">
+            <p>
+                Perform your gesture in front of the camera! Press spacebar or
+                click
+                the button to stop recording.
+            </p>
+            <img alt="Recording tutorial"
+                src="https://source.unsplash.com/random" class="screenshot" />
+        </div>
+        <div class="reverse">
+            <p>
+                Confirm your gesture, and you will now see the gesture in the
+                list.
+                Map the controls to whatever you like.
+            </p>
+            <img alt="Finishing up tutorial"
+                src="https://source.unsplash.com/random" class="screenshot" />
+        </div>
+        <p>
+            Just a note: the gesture recognition isn't 100% accurate. If you try
+            a gesture once and it nothing happens, try again!
+        </p>
+    </section>
+    <section id="team">
+        <h2>The Team</h2>
+        <p>
+            Four college seniors from the University of Utah worked on this
+            project from Fall 2022 to Spring 2023 as a capstone project for
+            their degree.
+        </p>
+        <div class="horizontal">
+            <div>
+                <img alt="Team member: Aish"
+                    src="https://source.unsplash.com/random" class="pfp" />
+                <p>
+                    Aish Athani
+                </p>
+                <a href="mailto:john@example.com">aish email</a>
+            </div>
+            <div>
+                <img alt="Team member: Carson"
+                    src="https://source.unsplash.com/random" class="pfp" />
+                <p>
+                    Carson Storm
+                </p>
+                <a
+                    href="mailto:carson.storm@outlook.com">carson.storm@outlook.com</a>
+            </div>
+            <div>
+                <img alt="Team member: James"
+                    src="https://source.unsplash.com/random" class="pfp" />
+                <p>
+                    James Youngblood
+                </p>
+                <a href="mailto:james@youngbloods.org">james@youngbloods.org</a>
+            </div>
+            <div>
+                <img alt="Team member: Manya"
+                    src="https://source.unsplash.com/random" class="pfp" />
+                <p>
+                    Manya Bajaj
+                </p>
+                <a href="mailto:john@example.com">manya email</a>
+            </div>
+        </div>
+    </section>
+</body>
+
+</html>
