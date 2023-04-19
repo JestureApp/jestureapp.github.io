@@ -4,21 +4,56 @@
 <head>
     <title>Jesture</title>
     <style>
+        :root {
+            --dark-primary: #333333;
+            --dark-secondary: #444444;
+            --dark-secondary-transparent: #44444488;
+            --light-primary: #f0f0f0;
+            --light-secondary: white;
+            --attention-primary: #aaaaee;
+            --attention-secondary: #bbbbff;
+            --content-width: 70rem;
+        }
+
         body {
             font-family: 'Arial', sans-serif;
+            margin: 0;
             padding: 0;
+            background-color: var(--dark-primary);
+            color: var(--light-primary);
+            width: 100%;
+            font-size: 1.4rem;
+        }
+
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 6rem;
+            background-color: var(--dark-secondary-transparent);
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            backdrop-filter: blur(10px);
+        }
+
+        .center,
+        section {
+            max-width: var(--content-width);
+            margin-left: auto;
+            margin-right: auto;
         }
 
         header {
             margin: 0;
-            background-color: #f0f0f0;
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            width: 100vw;
-            padding: 1em;
+            padding-top: 4rem;
+            padding-bottom: 2rem;
+            background-color: var(--dark-secondary);
         }
 
-        .brand {
+        .left,
+        .right {
             display: flex;
             flex-direction: row;
             height: 6em;
@@ -26,16 +61,21 @@
             align-items: center;
         }
 
+        .right {
+            margin-left: auto;
+            margin-right: 4rem;
+        }
+
         .icon {
-            width: 6em;
-            height: 6em;
-            border-radius: 3em;
+            width: 3.4rem;
+            height: 3.4rem;
+            margin-left: 4rem;
         }
 
         .title {
             margin: 0;
             margin-left: 2rem;
-            font-size: 4em;
+            font-size: 4rem;
         }
 
         .screenshot {
@@ -44,21 +84,25 @@
             margin-right: 2rem;
         }
 
-        section {
-            max-width: 75rem;
-            margin-left: auto;
-            margin-right: auto;
+        section::before {
+            display: block;
+            content: " ";
+            margin-top: -8rem;
+            height: 8rem;
+            visibility: hidden;
+            pointer-events: none;
         }
 
-        .horizontal,
-        .reverse {
+        .pair {
             display: flex;
             flex-direction: row;
             align-items: center;
             justify-content: center;
+            margin-top: 3rem;
+            margin-bottom: 3rem;
         }
 
-        .reverse {
+        .pair:nth-of-type(even) {
             flex-direction: row-reverse;
         }
 
@@ -67,68 +111,167 @@
             height: 10rem;
             border-radius: 5rem;
         }
+
+        .button {
+            background-color: var(--attention-primary);
+            padding: 1rem;
+            border-radius: 1rem;
+            color: white;
+            text-decoration: none;
+            margin: 1rem;
+            transition: background-color 0.2s;
+        }
+
+        .button:hover {
+            background-color: var(--attention-secondary);
+        }
+
+        .nav-link {
+            float: right;
+            margin-left: 4rem;
+            text-decoration: none;
+            color: var(--light-secondary);
+        }
+
+        .external-link {
+            color: var(--attention-primary);
+            margin-left: 1rem;
+        }
+
+        p {
+            max-width: 70ch;
+            margin-left: auto;
+            margin-right: auto;
+            padding-left: 1rem;
+            padding-right: 1rem;
+        }
+
+        h2 {
+            margin-left: 1rem;
+            margin-right: 1rem;
+        }
+
+        .hero-text {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 4rem;
+            font-size: 1.6rem;
+            font-weight: 600;
+        }
+
+        article {
+            margin: 1rem;
+        }
+
+        hr {
+            margin-top: 3rem;
+        }
+
+        .card {
+            background: var(--dark-secondary);
+            padding: 1rem;
+            border-radius: 1rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .email-link {
+            color: var(--light-secondary);
+        }
+
+        @media (max-width: 1000px) {
+            .right {
+                display: none;
+            }
+
+            .pair,
+            .pair:nth-of-type(even) {
+                flex-direction: column;
+            }
+
+            .screenshot {
+                max-width: 25rem;
+            }
+        }
     </style>
 </head>
 
 <body>
-    <header>
-        <div class="hero-text">
-            <div class="brand">
-                <img alt="Jesture logo" src="https://source.unsplash.com/random"
-                    class="icon" />
-                <h1 class="title">Jesture</h1>
-            </div>
-            <h3>Control your computer with your hands, not your keyboard.</h3>
-            <a href="#download">Download for Linux</a>
+    <nav>
+        <div class="left">
+            <img alt="Jesture logo" src="./jesture.svg" class="icon" />
+            <h1 class="title">Jesture</h1>
         </div>
-        <img alt="Desktop window for Jesture App"
-            src="https://source.unsplash.com/random" class="screenshot" />
+        <div class="right">
+            <a class="nav-link" href="#about">About</a>
+            <a class="nav-link" href="#download">Download</a>
+            <a class="nav-link" href="#usage">Usage</a>
+            <a class="nav-link" href="#team">Team</a>
+        </div>
+    </nav>
+    <header>
+        <div class="center pair">
+            <div class="hero-text">
+                <p>
+                    Control your computer with your hands, not your keyboard.
+                </p>
+                <a href="#download" class="button">
+                    Download for Linux (Debian)
+                </a>
+            </div>
+            <img alt="Desktop window for Jesture App"
+                src="https://source.unsplash.com/random" class="screenshot" />
+        </div>
     </header>
     <section id="about">
-        <div class="horizontal">
+        <div class="pair">
             <p>
-                Jesture uses computer vision to read your hands, and will
-                perform
-                keyboard or mouse events for you when it sees a gesture.
+                Jesture is a desktop app that uses computer vision to read your
+                hands, and will perform keyboard or mouse events for you when it
+                sees a gesture.
             </p>
             <img alt="App diagram" src="https://source.unsplash.com/random"
                 class="screenshot" />
         </div>
-        <div class="reverse">
+        <div class="pair">
             <p>
                 Think pressing escape when you curl your hand into a fist, or
-                moving
-                the mouse to follow your hand when you point upwards.
+                moving the mouse to follow your hand when you point upwards.
             </p>
             <img alt="Gesture demo" src="https://source.unsplash.com/random"
                 class="screenshot" />
         </div>
     </section>
     <section id="download">
+        <hr>
         <h2>Downloads</h2>
-        <p>
+        <article>
             You can download our app as a prebuilt Debian package.
-        </p>
-        <a
-            href="https://github.com/JestureApp/Jesture/releases/download/v0.5.0/jesture-0_5_0-x86_64.deb">
-            Download for Linux
+        </article>
+        <a href="https://github.com/JestureApp/Jesture/releases/download/v0.5.0/jesture-0_5_0-x86_64.deb"
+            class="external-link">
+            Download for Linux (Debian)
         </a>
-        <p>
-            The code is also on github.
-        </p>
-        <a href="https://github.com/JestureApp">We're open source!</a>
+        <article>
+            The code is also shared on <a href="https://github.com/JestureApp"
+                class="email-link">github</a>, under a permissive license.
+        </article>
     </section>
     <section id="usage">
+        <hr>
         <h2>Using the app</h2>
-        <div class="horizontal">
+        <div class="pair">
             <p>
-                Pretty simple. Open the app up, go to the gesture list on the
-                side.
+                Open the app up, go to the gesture list on the side.
             </p>
             <img alt="Gesture list tutorial"
                 src="https://source.unsplash.com/random" class="screenshot" />
         </div>
-        <div class="reverse">
+        <div class="pair">
             <p>
                 Change the gestures here to your desired keybindings. Or, record
                 a
@@ -137,70 +280,128 @@
             <img alt="Edit gestures tutorial"
                 src="https://source.unsplash.com/random" class="screenshot" />
         </div>
-        <div class="horizontal">
+        <div class="pair">
             <p>
                 Perform your gesture in front of the camera! Press spacebar or
-                click
-                the button to stop recording.
+                click the "stop recording" button when finished.
             </p>
             <img alt="Recording tutorial"
                 src="https://source.unsplash.com/random" class="screenshot" />
         </div>
-        <div class="reverse">
+        <div class="pair">
             <p>
-                Confirm your gesture, and you will now see the gesture in the
-                list.
-                Map the controls to whatever you like.
+                After naming and confirming your gesture, you will see it in the
+                list. Map the controls to whatever you like.
             </p>
             <img alt="Finishing up tutorial"
                 src="https://source.unsplash.com/random" class="screenshot" />
         </div>
         <p>
-            Just a note: the gesture recognition isn't 100% accurate. If you try
-            a gesture once and it nothing happens, try again!
+            Despite our best efforts, the app's gesture recognition isn't 100%
+            accurate. If you try a gesture once and it nothing happens, try
+            again! If it still doesn't work, try recording the gesture again.
         </p>
     </section>
     <section id="team">
+        <hr>
         <h2>The Team</h2>
         <p>
-            Four college seniors from the University of Utah worked on this
-            project from Fall 2022 to Spring 2023 as a capstone project for
-            their degree.
+            Four seniors from the University of Utah worked on this project from
+            Fall 2022 to Spring 2023 as a "capstone" project to finish off their
+            degree.
         </p>
-        <div class="horizontal">
-            <div>
+        <div class="pair">
+            <div class="card">
                 <img alt="Team member: Aish"
                     src="https://source.unsplash.com/random" class="pfp" />
                 <p>
                     Aish Athani
                 </p>
-                <a href="mailto:john@example.com">aish email</a>
+                <a href="mailto:john@example.com" class="email-link">aish
+                    email</a>
             </div>
-            <div>
+            <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                eiusmod tempor
+                incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+                veniam, quis
+                nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+                commodo consequat.
+                Duis aute irure dolor in reprehenderit in voluptate velit esse
+                cillum dolore eu
+                fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+                proident, sunt in
+                culpa qui officia deserunt mollit anim id est laborum.
+            </p>
+        </div>
+        <div class="pair">
+            <div class="card">
                 <img alt="Team member: Carson"
                     src="https://source.unsplash.com/random" class="pfp" />
                 <p>
                     Carson Storm
                 </p>
-                <a
-                    href="mailto:carson.storm@outlook.com">carson.storm@outlook.com</a>
+                <a href="mailto:carson.storm@outlook.com"
+                    class="email-link">carson.storm@outlook.com</a>
             </div>
-            <div>
-                <img alt="Team member: James"
-                    src="https://source.unsplash.com/random" class="pfp" />
+            <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                eiusmod tempor
+                incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+                veniam, quis
+                nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+                commodo consequat.
+                Duis aute irure dolor in reprehenderit in voluptate velit esse
+                cillum dolore eu
+                fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+                proident, sunt in
+                culpa qui officia deserunt mollit anim id est laborum.
+            </p>
+        </div>
+        <div class="pair">
+            <div class="card">
+                <img alt="Team member: James" src="./james.webp" class="pfp" />
                 <p>
                     James Youngblood
                 </p>
-                <a href="mailto:james@youngbloods.org">james@youngbloods.org</a>
+                <a href="mailto:james@youngbloods.org"
+                    class="email-link">james@youngbloods.org</a>
             </div>
-            <div>
+            <p>
+                James is a computer science student, pursuing a career in
+                computer graphics. Other interests include generative AI,
+                computer vision, and game development. He is enrolling in the
+                Masters program at Utah in Fall 2023 to get a specialized
+                Graphics degree. James was responsible for the UI of the
+                project, experimenting with a range of technologies web on
+                desktop platforms to low-level graphics libraries. When the
+                decision to settle on Qt in C++, he wrote the bigger portion of
+                the UI for the final product.
+            </p>
+        </div>
+        <div class="pair">
+            <div class="card">
                 <img alt="Team member: Manya"
                     src="https://source.unsplash.com/random" class="pfp" />
                 <p>
                     Manya Bajaj
                 </p>
-                <a href="mailto:john@example.com">manya email</a>
+                <a href="mailto:john@example.com" class="email-link">manya
+                    email</a>
             </div>
+            <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                eiusmod tempor
+                incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+                veniam, quis
+                nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+                commodo consequat.
+                Duis aute irure dolor in reprehenderit in voluptate velit esse
+                cillum dolore eu
+                fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+                proident, sunt in
+                culpa qui officia deserunt mollit anim id est laborum.
+            </p>
         </div>
     </section>
 </body>
