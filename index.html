@@ -8,6 +8,7 @@
             --dark-primary: #333333;
             --dark-secondary: #444444;
             --dark-secondary-transparent: #44444488;
+            --dark-tertiary: #222222;
             --light-primary: #f0f0f0;
             --light-secondary: white;
             --attention-primary: #aaaaee;
@@ -82,6 +83,7 @@
             max-width: 30rem;
             margin-left: 2rem;
             margin-right: 2rem;
+            border-radius: 6px;
         }
 
         section::before {
@@ -133,7 +135,7 @@
             color: var(--light-secondary);
         }
 
-        .external-link {
+        .download-link {
             color: var(--attention-primary);
             margin-left: 1rem;
         }
@@ -162,7 +164,7 @@
         }
 
         article {
-            margin: 1rem;
+            margin: 2rem 1rem;
         }
 
         hr {
@@ -179,12 +181,17 @@
             align-items: center;
         }
 
-        .email-link {
-            color: var(--light-secondary);
-        }
-        
+        .email-link,
+        .external-link,
         .github-link {
             color: var(--light-secondary);
+        }
+
+        code {
+            background-color: var(--dark-tertiary);
+            margin-left: 1rem;
+            padding: 0.4rem;
+            border-radius: 0.4rem;
         }
 
         @media (max-width: 1000px) {
@@ -198,7 +205,13 @@
             }
 
             .screenshot {
-                max-width: 25rem;
+                max-width: 90%;
+            }
+
+            .pfp {
+                width: 50vw;
+                height: 50vw;
+                border-radius: 25vw;
             }
         }
     </style>
@@ -213,7 +226,7 @@
         <div class="right">
             <a class="nav-link" href="#about">About</a>
             <a class="nav-link" href="#download">Download</a>
-            <a class="nav-link" href="#usage">Usage</a>
+            <a class="nav-link" href="#tutorial">Tutorial</a>
             <a class="nav-link" href="#team">Team</a>
         </div>
     </nav>
@@ -238,8 +251,7 @@
                 hands, and will perform keyboard or mouse events for you when it
                 sees a gesture.
             </p>
-            <img alt="App diagram" src="https://source.unsplash.com/random"
-                class="screenshot" />
+            <img alt="App diagram" src="./diagram.webp" class="screenshot" />
         </div>
         <div class="pair">
             <p>
@@ -257,29 +269,29 @@
             You can download our app as a prebuilt Debian package.
         </article>
         <a href="https://github.com/JestureApp/Jesture/releases/download/v0.5.0/jesture-0_5_0-x86_64.deb"
-            class="external-link">
+            class="download-link">
             Download for Linux (Debian)
         </a>
         <article>
-            To install the package run the following in your terminal
-            <pre><code>
-                sudo apt-get install ./(path to download)
-            </code></pre>
+            To install the package run the following in your terminal:
         </article>
+        <code>
+            sudo apt-get install ./(path to download)
+        </code>
         <article>
             The code is also shared on <a href="https://github.com/JestureApp"
-                class="email-link">github</a>, under a permissive license.
+                class="external-link">Github</a>, under a permissive license.
         </article>
     </section>
-    <section id="usage">
+    <section id="tutorial">
         <hr>
         <h2>Using the app</h2>
         <div class="pair">
             <p>
                 Open the app up, go to the gesture list on the side.
             </p>
-            <img alt="Gesture list tutorial"
-                src="https://source.unsplash.com/random" class="screenshot" />
+            <img alt="Gesture list tutorial" src="./tutorial1.webp"
+                class="screenshot" />
         </div>
         <div class="pair">
             <p>
@@ -287,24 +299,24 @@
                 a
                 new gesture.
             </p>
-            <img alt="Edit gestures tutorial"
-                src="https://source.unsplash.com/random" class="screenshot" />
+            <img alt="Edit gestures tutorial" src="./tutorial2.webp"
+                class="screenshot" />
         </div>
         <div class="pair">
             <p>
                 Perform your gesture in front of the camera! Press spacebar or
                 click the "stop recording" button when finished.
             </p>
-            <img alt="Recording tutorial"
-                src="https://source.unsplash.com/random" class="screenshot" />
+            <img alt="Recording tutorial" src="./tutorial3.webp"
+                class="screenshot" />
         </div>
         <div class="pair">
             <p>
                 After naming and confirming your gesture, you will see it in the
                 list. Map the controls to whatever you like.
             </p>
-            <img alt="Finishing up tutorial"
-                src="https://source.unsplash.com/random" class="screenshot" />
+            <img alt="Finishing up tutorial" src="./tutorial4.webp"
+                class="screenshot" />
         </div>
         <p>
             Despite our best efforts, the app's gesture recognition isn't 100%
@@ -322,51 +334,48 @@
         </p>
         <div class="pair">
             <div class="card">
-                <img alt="Team member: Aish"
-                    src="https://source.unsplash.com/random" class="pfp" />
+                <img alt="Team member: Aish" src="./aish.webp" class="pfp" />
                 <p>
                     Aish Athani
                 </p>
-                <a href="mailto:john@example.com" class="email-link">aish
-                    email</a>
+                <a href="mailto:deutsch.athani@gmail.com"
+                    class="email-link">deutsch.athani@gmail.com</a>
+                <a href="https://github.com/Aish-Athani/"
+                    class="github-link">github.com/Aish-Athani</a>
             </div>
             <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                eiusmod tempor
-                incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-                veniam, quis
-                nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-                commodo consequat.
-                Duis aute irure dolor in reprehenderit in voluptate velit esse
-                cillum dolore eu
-                fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-                proident, sunt in
-                culpa qui officia deserunt mollit anim id est laborum.
+                Aish is a computer science student with a math minor at the
+                University of Utah. In Jesture, Aish worked on the gesture
+                recognizer. This involved processing frames and developing an
+                algorithm to recognize gestures precisely and accurately. Her
+                main interest lies in the field of natural language processing.
+                Currently, she is doing an independent study with Prof. Riloff
+                at the University of Utah on sentiment analysis of similes. Her
+                future plans involve pursuing a Masters in CS to learn more
+                about NLP and Deep Learning.
             </p>
         </div>
         <div class="pair">
             <div class="card">
-                <img alt="Team member: Carson"
-                    src="./carson.jpg" class="pfp" />
+                <img alt="Team member: Carson" src="./carson.webp"
+                    class="pfp" />
                 <p>
                     Carson Storm
                 </p>
-                <p>
-                    Github: <a href="https://github.com/stormymcstorm/" class="github-link">stormymcstorm</a>
-                </p>
                 <a href="mailto:carson.storm@outlook.com"
                     class="email-link">carson.storm@outlook.com</a>
+                <a href="https://github.com/stormymcstorm/"
+                    class="github-link">github.com/stormymcstorm</a>
             </div>
             <p>
                 Carson is a computer science and mathematics student. He's going
                 on to get a Masters in mathematics at the University of Utah in
-                the fall of 2023.
-                
-                Carson was responsible for pipeline, user interface and simulated user
-                input components of the application. He wrote an API that interacts 
-                with the X display server on the users machine, designed the framework
-                we use for synchronizing dataflow and recognizing gestures, as well
-                as a big portion of the user interface.
+                the fall of 2023. Carson was responsible for pipeline, user
+                interface and simulated user input components of the
+                application. He wrote an API that interacts with the X display
+                server on the users machine, designed the framework we use for
+                synchronizing dataflow and recognizing gestures, as well as a
+                substantial portion of the user interface.
             </p>
         </div>
         <div class="pair">
@@ -377,6 +386,8 @@
                 </p>
                 <a href="mailto:james@youngbloods.org"
                     class="email-link">james@youngbloods.org</a>
+                <a href="https://github.com/soundeffects/"
+                    class="github-link">github.com/soundeffects</a>
             </div>
             <p>
                 James is a computer science student, pursuing a career in
@@ -384,23 +395,32 @@
                 computer vision, and game development. He is enrolling in the
                 Masters program at Utah in Fall 2023 to get a specialized
                 Graphics degree. James was responsible for the UI of the
-                project, experimenting with a range of technologies web on
-                desktop platforms to low-level graphics libraries. When the
-                decision to settle on Qt in C++, he wrote the bigger portion of
-                the UI for the final product.
+                project, and built a few trials using different platforms and
+                frameworks. When the decision to settle on Qt was made, he wrote
+                a large portion of the interface.
             </p>
         </div>
         <div class="pair">
             <div class="card">
-                <img alt="Team member: Manya"
-                    src="./manya.jpg" class="pfp" />
+                <img alt="Team member: Manya" src="./manya.webp" class="pfp" />
                 <p>
                     Manya Bajaj
                 </p>
-                <a href="mailto:manyabajaj20@gmail.com" class="email-link">manyabajaj20@gmail.com</a>
+                <a href="mailto:manyabajaj20@gmail.com"
+                    class="email-link">manyabajaj20@gmail.com</a>
+                <a href="https://github.com/ManyaBajaj/"
+                    class="github-link">github.com/ManyaBajaj</a>
             </div>
             <p>
-                Manya is a computer science student at the University of Utah. She will be working in the industry as a software engineer after graduating and is interested in applications of machine learning and natural language processing. Manya worked on the backend side of the project and was responsible for the gesture recognition component of Jesture which involves processing video frames received by the user interface and an efficient algorithm to detect gestures. This also includes providing users with the option to record custom gestures of their choice.
+                Manya is a computer science student at the University of Utah.
+                She will be working in the industry as a software engineer after
+                graduating and is interested in applications of machine learning
+                and natural language processing. Manya worked on the backend
+                side of the project and was responsible for the gesture
+                recognition component of Jesture which involves processing video
+                frames received by the user interface and an efficient algorithm
+                to detect gestures. This also includes providing users with the
+                option to record custom gestures of their choice.
             </p>
         </div>
     </section>
