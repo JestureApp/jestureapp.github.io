@@ -79,11 +79,16 @@
             font-size: 4rem;
         }
 
-        .screenshot {
+        .screenshot,
+        .figure {
             max-width: 30rem;
             margin-left: 2rem;
             margin-right: 2rem;
             border-radius: 6px;
+        }
+
+        .screenshot {
+            box-shadow: 0 2px 10px #0006;
         }
 
         section::before {
@@ -240,7 +245,7 @@
                     Download for Linux (Debian)
                 </a>
             </div>
-            <video class="screenshot" controls>
+            <video class="figure" controls>
                 <source src="./jesture_final_video.mp4" type="video/mp4">
                 Your browser does not support our video format.
             </video>
@@ -253,7 +258,7 @@
                 hands, and will perform keyboard or mouse events for you when it
                 sees a gesture.
             </p>
-            <img alt="App diagram" src="./diagram.webp" class="screenshot" />
+            <img alt="App diagram" src="./diagram.webp" class="figure" />
         </div>
         <div class="pair">
             <p>
